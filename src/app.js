@@ -13,6 +13,7 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 // SETUP
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
+app.use(express.static(publicDirPath))
 hbs.registerPartials(partialsPath)
 
 
@@ -20,7 +21,8 @@ hbs.registerPartials(partialsPath)
 
 app.get('', (request, response) => {
      response.render('index', {
-         title: "A Simple Site with APIs"
+         title: "A Simple Site with APIs",
+         author: "mabus"
      })
 })
 
