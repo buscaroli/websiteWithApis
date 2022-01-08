@@ -28,9 +28,12 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
+    
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -47,25 +50,56 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
+
 /* APPLICATION SPECIFIC STYLING FROM HERE */
 
-/* HEADER */
+.main {
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1.2px;
+}
+
+.main-section {
+    padding: 10px;
+    max-width: 80%;
+    margin: auto;
+
+}
+
+.header, footer {
+    padding: 20px;
+}
+
+.header {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+	line-height: 30px;
+
+    background-color: slategray;
+}
+
+.header-item > a{
+    color: white;
+}
+
+footer {
+    color: gray;
+    font-size: smaller;
+	font-weight: bolder;
+    letter-spacing: 3px;
+    text-align: center;
+    
+}
+
+
 
 p {
 	padding-top: 30px;
 }
- 
-header {
-	padding: 30px;
-	font-size: larger;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	letter-spacing: 2px;
-	line-height: 30px;
 
-	animation: fadeIn;
-	animation-duration: 5s;
-	animation-timing-function: ease-out;
-}
 
 ul {
 	display: inline-block;
@@ -75,6 +109,37 @@ li {
 	display: inline-block;
 	padding-right: 20px;
 }
+
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: goldenrod;
+
+	animation: whiteToGoldenrod;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-out;
+}
+
+a:active {
+	opacity: 0.7;
+}
+
+@keyframes blackToGoldenrod {
+	from { color: black; }
+	to { color: goldenrod; }
+}
+
+@keyframes whiteToGoldenrod {
+	from { color: white; }
+	to { color: goldenrod; }
+}
+
+
+/* TABLE */
 
 @keyframes fadeIn {
 	0% {
@@ -86,60 +151,13 @@ li {
 	}
 }
 
-a {
-	text-decoration: none;
-	color: black;
-}
-
-a:hover {
-	color: goldenrod;
-
-	animation: toGoldenrod;
-	animation-duration: 0.6s;
-	animation-timing-function: ease-out;
-}
-
-a:active {
-	opacity: 0.7;
-}
-
-@keyframes toGoldenrod {
-	from { color: black; }
-	to { color: goldenrod; }
-}
-
-/* INDEX */
-.main {
-	font-size: medium;
-	font-family: Georgia, 'Times New Roman', Times, serif;	width: 80%;
-	letter-spacing: 1.2px;
-	padding: 10px;
-	margin: auto;
-
-	
-}
-
-/* FOOTER */
-footer {
-	max-width: 100%;
-	margin: auto;
-	padding: 20px 10px 20px 30px;
-	font-size: smaller;
-	font-weight: bolder;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	letter-spacing: 2px;
-	line-height: 15px;
-	text-align: center;
-
-	animation: fadeIn;
-	animation-duration: 5s;
-	animation-timing-function: ease-out;
-	
-}
-
-/* TABLE */
 table {
-	border: 2px solid lightgray;
+	margin: auto;
+    border: 2px solid lightgray;
+    
+    animation: fadeIn;
+	animation-duration: 2s;
+	animation-timing-function: ease-out;
 }
 
 .crypto-table-header-item {
@@ -165,79 +183,38 @@ tr:nth-child(odd):hover {
 	background-color: lightslategray;
 }
 
-.coingecko {
-	margin-top: -20px;
+.section {
+    width: 100%;
+    text-align: center;
+}
+
+
+.section-paragraph 
+{
+    font-size: 1.2rem;
+    padding: 20px;
+    
+}
+
+.section-coingecko {
 	font-family: monospace;
 	font-size: small;
+    margin-top: -20px;
+    padding-bottom: 40px;
+    
 }
 
-/* 404  */
-.notfound {
-	width: 80%;
-	margin: auto;
+#gecko:hover {
+    animation: blackToGoldenrod;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-out;
 }
 
-.notfound-title {
-	font-weight: bold;
-	color: orangered;
-	margin-bottom: 2rem;
-	
-}
-
-.notfound-title-1 {
-	font-size: 4rem;
-}
-
-.notfound-title-2 {
-	font-size: 1.5rem;
-}
-
-.notfound-redirect {
-	font-size:larger;
-	
-}
-
-
-/* MEDIA QUERIES */
-
-@media  screen and (min-width: 600px) {
-	
-	
-	header {
-		width: 60%;
-		margin-left: 15%;
-	}
-
-	.main {
-		width: 60%;
-		margin: auto;
-	}
-
-	footer {
-		max-width: 60%;
-		
-
-	}
-	
-}
 
 @media  screen and (min-width: 1100px) {
 	
-	
-	header {
-		width: 40%;
-		margin-left: 15%;
-	}
-
-	.main {
-		width: 40%;
-		margin: auto;
-	}
-
-	footer {
-		width: 40%;
-		
-	
-	}
+	.main-section {
+		max-width: 900px;
+    }
 	
 }

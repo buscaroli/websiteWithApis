@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles2.css">
     <title>Simple Site with APIs</title>
 </head>
 <body>
-    {{> header }}
     <div class="main">
+         {{> header }}
         <section class="section">
-            <p> 
+            <p class="section-paragraph"> 
                 Top trending Coins.
-            </p><br>
+            </p>
             
             {{#if data}}
-                <table class="crypto-table">
-                    <tr class="crypto-table-header">
-                        <th class="crypto-table-header-item">Name</th>
-                        <th class="crypto-table-header-item">Symbol</th>
-                        <th class="crypto-table-header-item">Price in BTC</th>
-                    </tr>
-                    {{#each data}}
-                    <tr>
-                        <td>{{this.item.name}}</td>                    
-                        <td>{{this.item.symbol}}</td>
-                        <td>{{this.item.price_btc}}</td>
-                    </tr>
-                    {{/each}}
-                </table>
+            <table class="crypto-table">
+                <tr class="crypto-table-header">
+                    <th class="crypto-table-header-item">Name</th>
+                    <th class="crypto-table-header-item">Symbol</th>
+                    <th class="crypto-table-header-item">Price in BTC</th>
+                </tr>
+                {{#each data}}
+                <tr>
+                    <td>{{this.item.name}}</td>                    
+                    <td>{{this.item.symbol}}</td>
+                    <td>{{this.item.price_btc}}</td>
+                </tr>
+                {{/each}}
+            </table>
                 
-                <p class="coingecko">
-                    Data courtesy of <a href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
-                </p>
+            <p class="section-coingecko">
+                Data courtesy of <a id="gecko" href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
+            </p>
 
             {{/if}}
         </section>
+         {{> footer}}
     </div>
-    {{> footer}}
 </body>
 </html>
