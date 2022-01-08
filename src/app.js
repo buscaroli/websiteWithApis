@@ -26,7 +26,37 @@ app.get('', (request, response) => {
      })
 })
 
+app.get('/about', (request, response) => {
+     response.render('about', {
+         title: "A Simple Ste with APIs",
+         author: "mabus"
+     })
+})
 
+app.get('/crypto', (request,response) => {
+     response.render('crypto', {
+        title: "A Simple Ste with APIs",
+        author: "mabus",
+        data: 
+            [
+                {
+                    name: "bitcoin",
+                    symbol: "BTC",
+                    price: "32050.25$"
+                },
+                {
+                    name: "ethereum",
+                    symbol: "ETH",
+                    price: "4000.50$"
+                },
+                {
+                    name: "cardano",
+                    symbol: "ADA",
+                    price: "500.20$"
+                }
+            ]
+     })
+})
 
 
 app.get('*', (request, response) => {

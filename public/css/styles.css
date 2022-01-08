@@ -50,6 +50,10 @@ table {
 /* APPLICATION SPECIFIC STYLING FROM HERE */
 
 /* HEADER */
+
+p {
+	padding-top: 30px;
+}
  
 header {
 	padding: 30px;
@@ -105,17 +109,54 @@ a:active {
 }
 
 /* INDEX */
-
-.main {
-	width: 80%;
+.main, .crypto-main, .crypto-section {
+	font-size: medium;
+	font-family: Georgia, 'Times New Roman', Times, serif;	width: 80%;
+	letter-spacing: 1.2px;
 	padding: 10px;
 	margin: auto;
 
 	
 }
 
+/* FOOTER */
+footer {
+	max-width: 100%;
+	margin: auto;
+	padding: 20px 10px 20px 30px;
+	font-size: smaller;
+	font-weight: bolder;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	letter-spacing: 2px;
+	line-height: 15px;
+	text-align: center;
+
+	animation: fadeIn;
+	animation-duration: 5s;
+	animation-timing-function: ease-out;
+	
+}
+
+/* TABLE */
+table {
+	border: 2px solid lightgray;
+}
+
+.crypto-table-header-item {
+	font-weight: bolder;
+}
+
+td {
+	padding: 5px;
+	padding-right: 30px;
+}
+
+
+/* MEDIA QUERIES */
 
 @media  screen and (min-width: 600px) {
+	
+	
 	header {
 		width: 60%;
 		margin-left: 15%;
@@ -124,6 +165,33 @@ a:active {
 	.main {
 		width: 60%;
 		margin: auto;
+	}
+
+	footer {
+		max-width: 60%;
+		
+
+	}
+	
+}
+
+@media  screen and (min-width: 1100px) {
+	
+	
+	header {
+		width: 40%;
+		margin-left: 15%;
+	}
+
+	.main {
+		width: 40%;
+		margin: auto;
+	}
+
+	footer {
+		width: 40%;
+		
+	
 	}
 	
 }
