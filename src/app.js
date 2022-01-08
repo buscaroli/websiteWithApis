@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const { get } = require('express/lib/response')
+const fetchTrendingCoins = require('./javascript/api')
 
 // CONSTANTS
 const app = express()
@@ -34,33 +35,35 @@ app.get('/about', (request, response) => {
 })
 
 app.get('/crypto', (request,response) => {
-     response.render('crypto', {
-        title: "A Simple Ste with APIs",
-        author: "mabus",
-        data: 
-            [
-                {
-                    name: "bitcoin",
-                    symbol: "BTC",
-                    price: "32050.25$"
-                },
-                {
-                    name: "ethereum",
-                    symbol: "ETH",
-                    price: "4000.50$"
-                },
-                {
-                    name: "cardano",
-                    symbol: "ADA",
-                    price: "500.20$"
-                }
-            ]
-     })
+    let data = fetchTrendingCoins
+    
+    data 
+        .then(
+            console.log(`\n~~~~~ ~~~~~ ~~~~~ ~~~~~\n~~~~~ ~~~~~ ~~~~~ ~~~~~\n~~~~~ ~~~~~ ~~~~~ ~~~~~\nDATA:\n ${data}`)
+        )
+        .then(data => {
+            response.render('crypto', {
+                title: "A Simple Ste with APIs",
+                author: "mabus",
+                data: data
+            })
+        })
+        .catch(error => {
+            console.log("\nERROR\nERROR\nERROR\nERROR")
+            response.render('crypto', {
+                title: "A Simple Ste with APIs",
+                author: "mabus"
+            })
+        }) 
+
 })
 
 
 app.get('*', (request, response) => {
-     response.send('404 NOT FOUND.')
+     response.render('404', {
+        title: "A Simple Ste with APIs",
+        author: "mabus"
+     })
 })
 
 // LAUNCHING SERVER

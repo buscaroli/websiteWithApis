@@ -6,35 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Simple Site with APIs</title>
-    
 </head>
 <body>
     {{> header }}
-    <div class="crypto-main">
-        <section class="crypto-section">
+    <div class="main">
+        <section class="section">
             <p> 
-                Crypto data.
+                Top trending Coins.
             </p><br>
+            
+            {{#if data}}
+                <table class="crypto-table">
+                    <tr class="crypto-table-header">
+                        <th class="crypto-table-header-item">Name</th>
+                        <th class="crypto-table-header-item">Symbol</th>
+                        <th class="crypto-table-header-item">Price in BTC</th>
+                    </tr>
+                    {{#each data}}
+                    <tr>
+                        <td>{{this.item.name}}</td>                    
+                        <td>{{this.item.symbol}}</td>
+                        <td>{{this.item.price_btc}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+                
+                <p class="coingecko">
+                    Data courtesy of <a href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
+                </p>
 
-            <table class="crypto-table">
-                <th class="crypto-table-header">
-                    <td class="crypto-table-header-item">Name</td>
-                    <td class="crypto-table-header-item">Symbol</td>
-                    <td class="crypto-table-header-item">Price</td>
-                </th>
-                {{#each data}}
-                <tr>
-                    <td></td>
-                    <td>{{this.name}}</td>                    
-                    <td>{{this.symbol}}</td>
-                    <td>{{this.price}}</td>
-                </tr>
-                {{/each}}
-            </table>
-            
-            
-            
-            
+            {{/if}}
         </section>
     </div>
     {{> footer}}

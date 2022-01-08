@@ -109,7 +109,7 @@ a:active {
 }
 
 /* INDEX */
-.main, .crypto-main, .crypto-section {
+.main {
 	font-size: medium;
 	font-family: Georgia, 'Times New Roman', Times, serif;	width: 80%;
 	letter-spacing: 1.2px;
@@ -146,9 +146,55 @@ table {
 	font-weight: bolder;
 }
 
+th {
+	padding: 10px;
+	background-color: slategray;
+	color: white;
+}
+
 td {
 	padding: 5px;
 	padding-right: 30px;
+}
+
+tr:nth-child(odd) {
+	background-color: lightgray;
+}
+
+tr:nth-child(odd):hover {
+	background-color: lightslategray;
+}
+
+.coingecko {
+	margin-top: -20px;
+	font-family: monospace;
+	font-size: small;
+}
+
+/* 404  */
+.notfound {
+	width: 80%;
+	margin: auto;
+}
+
+.notfound-title {
+	font-weight: bold;
+	color: orangered;
+	margin-bottom: 2rem;
+	
+}
+
+.notfound-title-1 {
+	font-size: 4rem;
+}
+
+.notfound-title-2 {
+	font-size: 1.5rem;
+}
+
+.notfound-redirect {
+	font-size:larger;
+	
 }
 
 
