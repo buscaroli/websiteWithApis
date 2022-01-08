@@ -4,12 +4,14 @@
   "description": "Reviewing nodeJS, express, handlebars, HTML, CSS and javascript. Implementing a main webpage that redirects to other pages each with a different content (eg a call to an API). Nothing fancy, haven't touched those technologies for a while and needs to review them.",
   "main": "/src/app.js",
   "scripts": {
+    "start": "nodemon src/app.js --ext *",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mabus",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "hbs": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
